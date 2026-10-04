@@ -3,118 +3,117 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+
 <title>Homeopathy Patient History</title>
 
 <style>
 *{box-sizing:border-box}
 
 body{
-    margin:0;
-    background:#f5f2fb;
-    font-family:Arial,sans-serif;
-    color:#222;
+margin:0;
+background:#f5f2fb;
+font-family:Arial,sans-serif;
+color:#222;
 }
 
 header{
-    background:linear-gradient(135deg,#6b45b9,#7b4fc7);
-    color:white;
-    padding:28px 18px;
-    text-align:center;
+background:linear-gradient(135deg,#6b45b9,#7b4fc7);
+color:white;
+padding:28px 18px;
+text-align:center;
 }
 
 h1{
-    font-size:30px;
-    margin:0 0 8px;
-    font-weight:800;
+font-size:30px;
+margin:0 0 8px;
+font-weight:800;
 }
 
 .sub{
-    font-size:18px;
+font-size:18px;
 }
 
 .container{
-    max-width:760px;
-    margin:22px auto;
-    padding:0 14px;
+max-width:760px;
+margin:22px auto;
+padding:0 14px;
 }
 
 .card{
-    background:white;
-    border:1px solid #ddd;
-    border-radius:20px;
-    padding:20px;
-    margin-bottom:18px;
-    box-shadow:0 3px 12px #00000010;
+background:white;
+border:1px solid #ddd;
+border-radius:20px;
+padding:20px;
+margin-bottom:18px;
+box-shadow:0 3px 12px #00000010;
 }
 
 h2{
-    color:#5b3a9e;
-    font-size:23px;
-    margin:0 0 18px;
+color:#5b3a9e;
+font-size:23px;
+margin:0 0 18px;
 }
 
 label{
-    display:block;
-    font-size:17px;
-    font-weight:700;
-    margin:15px 0 7px;
+display:block;
+font-size:17px;
+font-weight:700;
+margin:15px 0 7px;
 }
 
-input,
-select,
-textarea{
-    width:100%;
-    padding:14px;
-    border:1px solid #cfcfcf;
-    border-radius:12px;
-    font-size:16px;
-    background:#fff;
+input,select,textarea{
+width:100%;
+padding:14px;
+border:1px solid #cfcfcf;
+border-radius:12px;
+font-size:16px;
+background:#fff;
 }
 
 textarea{
-    resize:vertical;
+resize:vertical;
 }
 
 .actions{
-    position:sticky;
-    bottom:0;
-    background:#f5f2fb;
-    padding:12px 0;
-    display:flex;
-    gap:10px;
+position:sticky;
+bottom:0;
+background:#f5f2fb;
+padding:12px 0;
+display:flex;
+gap:10px;
 }
 
 button{
-    flex:1;
-    border:0;
-    border-radius:13px;
-    padding:15px;
-    font-size:16px;
-    font-weight:800;
+flex:1;
+border:0;
+border-radius:13px;
+padding:15px;
+font-size:16px;
+font-weight:800;
 }
 
 .send{
-    background:#6b45b9;
-    color:white;
+background:#6b45b9;
+color:white;
 }
 
 .clear{
-    background:#e8e3f2;
-    color:#4f3a77;
+background:#e8e3f2;
+color:#4f3a77;
 }
 
 .note{
-    font-size:13px;
-    color:#666;
-    text-align:center;
-    margin:12px 0 25px;
-    line-height:1.5;
+font-size:13px;
+color:#666;
+text-align:center;
+margin:12px 0 25px;
+line-height:1.5;
 }
 
 @media(max-width:500px){
-    h1{font-size:27px}
-    h2{font-size:21px}
-    .container{padding:0 10px}
+h1{font-size:27px}
+h2{font-size:21px}
+.container{padding:0 10px}
 }
 </style>
 </head>
@@ -122,15 +121,14 @@ button{
 <body>
 
 <header>
-    <h1>Homeopathy Patient History</h1>
-    <div class="sub">Patient Information Form</div>
+<h1>Homeopathy Patient History</h1>
+<div class="sub">Patient Information Form</div>
 </header>
 
 <div class="container">
 
 <form id="patientForm">
 
-<!-- 1 -->
 <section class="card">
 <h2>1. Patient Information</h2>
 
@@ -162,7 +160,6 @@ button{
 </section>
 
 
-<!-- 2 -->
 <section class="card">
 <h2>2. Chief Complaint</h2>
 
@@ -189,7 +186,6 @@ button{
 </section>
 
 
-<!-- 3 -->
 <section class="card">
 <h2>3. Present Illness</h2>
 
@@ -207,7 +203,6 @@ button{
 </section>
 
 
-<!-- 4 -->
 <section class="card">
 <h2>4. Physical Generals</h2>
 
@@ -217,21 +212,11 @@ button{
 <label>General Food Habits</label>
 <textarea name="food_general" rows="3"></textarea>
 
-<label>General Thermal Condition</label>
-<textarea name="thermal_general" rows="3"></textarea>
-
-<label>General Sweating</label>
-<textarea name="sweating_general" rows="3"></textarea>
-
-<label>General Sleep</label>
-<textarea name="sleep_general" rows="3"></textarea>
-
 <label>Energy</label>
 <textarea name="energy" rows="3"></textarea>
 </section>
 
 
-<!-- 5 -->
 <section class="card">
 <h2>5. Thirst</h2>
 
@@ -264,7 +249,6 @@ button{
 </section>
 
 
-<!-- 6 -->
 <section class="card">
 <h2>6. Food Preferences & Intolerance</h2>
 
@@ -279,7 +263,6 @@ button{
 </section>
 
 
-<!-- 7 -->
 <section class="card">
 <h2>7. Thermal & Temperature</h2>
 
@@ -289,12 +272,11 @@ button{
 <label>Hot / Cold Preference</label>
 <input type="text" name="thermal">
 
-<label>Thermal Modalities</label>
+<label>Thermal Modalities / What Makes Better or Worse</label>
 <textarea name="thermal_modalities" rows="3"></textarea>
 </section>
 
 
-<!-- 8 -->
 <section class="card">
 <h2>8. Sweating</h2>
 
@@ -318,7 +300,6 @@ button{
 </section>
 
 
-<!-- 9 -->
 <section class="card">
 <h2>9. Sleep</h2>
 
@@ -342,10 +323,12 @@ button{
 
 <label>Preferred Sleeping Position</label>
 <input type="text" name="sleep_position">
+
+<label>Personal Sleep Routine</label>
+<textarea name="personal_sleep_routine" rows="3"></textarea>
 </section>
 
 
-<!-- 10 -->
 <section class="card">
 <h2>10. Dreams</h2>
 
@@ -360,7 +343,6 @@ button{
 </section>
 
 
-<!-- 11 -->
 <section class="card">
 <h2>11. Bowels</h2>
 
@@ -381,7 +363,6 @@ button{
 </section>
 
 
-<!-- 12 -->
 <section class="card">
 <h2>12. Urine</h2>
 
@@ -399,7 +380,6 @@ button{
 </section>
 
 
-<!-- 13 -->
 <section class="card">
 <h2>13. Mental & Emotional</h2>
 
@@ -441,7 +421,6 @@ button{
 </section>
 
 
-<!-- 14 -->
 <section class="card">
 <h2>14. Personal History</h2>
 
@@ -463,9 +442,6 @@ button{
 <label>Exercise</label>
 <textarea name="exercise" rows="3"></textarea>
 
-<label>Personal Sleep Routine</label>
-<textarea name="personal_sleep_routine" rows="3"></textarea>
-
 <label>Daily Routine</label>
 <textarea name="daily_routine" rows="3"></textarea>
 
@@ -483,7 +459,6 @@ button{
 </section>
 
 
-<!-- 15 -->
 <section class="card">
 <h2>15. Follow-up & Additional Information</h2>
 
@@ -494,7 +469,7 @@ button{
 <input type="date" name="follow_up_date">
 
 <label>Additional Notes</label>
-<textarea name="additional_notes" rows="4"></textarea>
+<textarea name="additional_notes" rows="3"></textarea>
 </section>
 
 
@@ -523,120 +498,161 @@ Patient information is not uploaded to GitHub.
 
 async function sendData(){
 
-    const form = document.getElementById("patientForm");
+const form=document.getElementById("patientForm");
 
-    const name =
-        form.elements["patient_name"].value.trim();
+const name=form.elements["patient_name"].value.trim();
 
-    if(!name){
-
-        alert("Please enter the patient name.");
-
-        return;
-    }
+if(!name){
+alert("Please enter the patient name.");
+return;
+}
 
 
-    const patient = {};
+/* Collect patient data */
 
-    for(const el of form.elements){
+const patient={};
 
-        if(el.name){
+for(const el of form.elements){
 
-            patient[el.name] = el.value;
+if(el.name){
+patient[el.name]=el.value;
+}
 
-        }
-
-    }
-
-
-    const data = {
-
-        format:"HomeopathyPatientHistoryPatient",
-
-        version:1,
-
-        patient:patient,
-
-        created_at:Date.now()
-
-    };
+}
 
 
-    const json =
-        JSON.stringify(data,null,2);
+/* Create JSON */
+
+const data={
+format:"HomeopathyPatientHistoryPatient",
+version:1,
+patient:patient,
+created_at:Date.now()
+};
+
+const json=JSON.stringify(data,null,2);
 
 
-    const safeName =
-        name
-        .replace(/[^a-zA-Z0-9_-]+/g,"_")
-        .slice(0,40)
-        || "Patient";
+/* File name */
+
+const safeName=
+name.replace(/[^a-zA-Z0-9_-]+/g,"_")
+.slice(0,40) || "Patient";
+
+const fileName=
+"HomeopathyPatient_"+safeName+".json";
 
 
-    const file =
-        new File(
-            [json],
-            "HomeopathyPatient_" + safeName + ".json",
-            {type:"application/json"}
-        );
+/* Create share file */
+/* text/plain gives better Android Web Share compatibility */
+
+const file=new File(
+[json],
+fileName,
+{type:"text/plain"}
+);
 
 
-    try{
+/* STEP 1 - Try Android file sharing */
 
-        if(
-            navigator.share &&
-            navigator.canShare &&
-            navigator.canShare({files:[file]})
-        ){
+try{
 
-            await navigator.share({
+if(
+navigator.share &&
+navigator.canShare &&
+navigator.canShare({files:[file]})
+){
 
-                title:"Homeopathy Patient Data",
+await navigator.share({
 
-                text:"Patient data is ready. Choose WhatsApp.",
+title:"Homeopathy Patient Data",
 
-                files:[file]
+text:"Completed Homeopathy Patient History",
 
-            });
+files:[file]
 
-            return;
+});
 
-        }
+return;
 
-    }catch(e){
+}
 
-        if(e && e.name==="AbortError"){
+}catch(error){
 
-            return;
+if(error && error.name==="AbortError"){
+return;
+}
 
-        }
-
-    }
-
-
-    const url =
-        URL.createObjectURL(file);
+}
 
 
-    const a =
-        document.createElement("a");
+/* STEP 2 - Try normal Android Share */
 
-    a.href = url;
+try{
 
-    a.download = file.name;
+if(navigator.share){
 
-    document.body.appendChild(a);
+await navigator.share({
 
-    a.click();
+title:"Homeopathy Patient Data",
 
-    a.remove();
+text:
+"Homeopathy Patient History\n\n"+
+"Patient: "+name+
+"\n\nPatient JSON Data:\n\n"+
+json
 
-    URL.revokeObjectURL(url);
+});
+
+return;
+
+}
+
+}catch(error){
+
+if(error && error.name==="AbortError"){
+return;
+}
+
+}
 
 
-    alert(
-        "The patient data JSON file has been downloaded. Please send this file on WhatsApp."
-    );
+/* STEP 3 - Download JSON file */
+
+try{
+
+const blob=new Blob(
+[json],
+{type:"application/json"}
+);
+
+const url=URL.createObjectURL(blob);
+
+const a=document.createElement("a");
+
+a.href=url;
+a.download=fileName;
+
+document.body.appendChild(a);
+
+a.click();
+
+a.remove();
+
+URL.revokeObjectURL(url);
+
+alert(
+"The patient JSON file has been downloaded.\n\n"+
+"Open Downloads and share the file on WhatsApp."
+);
+
+}catch(error){
+
+alert(
+"Unable to share or download the patient data."
+);
+
+}
 
 }
 
