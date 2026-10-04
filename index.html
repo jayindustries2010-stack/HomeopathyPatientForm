@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Homeopathy Patient History</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f6f3fa;color:#222;font-family:Arial,sans-serif}
+.header{background:#6b4bb5;color:white;text-align:center;padding:20px 12px}
+.header h1{margin:0;font-size:26px}.header p{margin:8px 0 0;font-size:18px}
+.container{max-width:720px;margin:auto;padding:14px 12px 35px}
+.card{background:white;border:1px solid #ddd6e7;border-radius:16px;padding:16px;margin:12px 0;box-shadow:0 2px 8px #ddd}
+.card h2{color:#543b8e;margin:0 0 14px;font-size:21px}
+label{display:block;font-weight:700;margin:12px 0 5px}
+input,textarea,select{width:100%;padding:13px;border:1px solid #d6d0dc;border-radius:10px;font-size:16px;background:#fff}
+textarea{min-height:70px;resize:vertical}
+button{width:100%;padding:15px;border:0;border-radius:12px;font-size:17px;font-weight:700;margin-top:10px}
+.send{background:#6b4bb5;color:white}.clear{background:#eeeaf4;color:#333}
+.note{font-size:13px;color:#666;line-height:1.5}
+</style>
+</head>
+<body>
+<div class="header"><h1>Homeopathy Patient History</h1><p>Patient Information Form</p></div>
+<form id="patientForm" class="container">
+<div class="card"><h2>1. Patient Information</h2>
+<label>Patient Name *</label><input name="patient_name" required>
+<label>Age</label><input name="patient_age" type="number">
+<label>Gender</label><select name="patient_gender"><option value=""></option><option>Male</option><option>Female</option><option>Other</option></select>
+<label>Mobile</label><input name="patient_mobile" type="tel">
+<label>Address</label><textarea name="patient_address"></textarea>
+<label>Occupation</label><input name="patient_occupation">
+<label>Email</label><input name="patient_email" type="email">
+</div>
+<div class="card"><h2>2. Chief Complaint</h2><label>Complaint</label><textarea name="complaint"></textarea><label>Since</label><textarea name="complaint_since"></textarea><label>Location</label><textarea name="complaint_location"></textarea><label>Sensation</label><textarea name="complaint_sensation"></textarea><label>Severity</label><textarea name="complaint_severity"></textarea><label>Better / Worse</label><textarea name="complaint_better_worse"></textarea><label>Time / Frequency</label><textarea name="complaint_time_frequency"></textarea></div>
+<div class="card"><h2>3. Present Illness</h2><label>Onset</label><textarea name="present_onset"></textarea><label>Trigger</label><textarea name="present_trigger"></textarea><label>Progress</label><textarea name="present_progress"></textarea><label>Previous Treatment</label><textarea name="previous_treatment"></textarea></div>
+<div class="card"><h2>4. Physical Generals</h2><label>Appetite</label><textarea name="appetite"></textarea><label>Food General</label><textarea name="food_general"></textarea><label>Thermal General</label><textarea name="thermal_general"></textarea><label>Sweating General</label><textarea name="sweating_general"></textarea><label>Sleep General</label><textarea name="sleep_general"></textarea><label>Dreams General</label><textarea name="dreams_general"></textarea><label>Energy General</label><textarea name="energy_general"></textarea><label>Bowels General</label><textarea name="bowels_general"></textarea><label>Urine General</label><textarea name="urine_general"></textarea></div>
+<div class="card"><h2>5. Tarash</h2><label>Basic</label><textarea name="thirst_basic"></textarea><label>Quantity</label><textarea name="thirst_quantity"></textarea><label>Pattern</label><textarea name="thirst_pattern"></textarea><label>Temperature</label><textarea name="thirst_temperature"></textarea><label>Timing</label><textarea name="thirst_timing"></textarea><label>Night Tarash</label><textarea name="night_thirst"></textarea><label>Mouth</label><textarea name="thirst_mouth"></textarea><label>Effect of Water</label><textarea name="water_effect"></textarea><label>Total Fluids</label><textarea name="total_fluids"></textarea></div>
+<div class="card"><h2>6. Food</h2><label>Food Desires</label><textarea name="food_desires"></textarea><label>Food Aversions</label><textarea name="food_aversions"></textarea><label>Food Intolerance</label><textarea name="food_intolerance"></textarea></div>
+<div class="card"><h2>7. Thermal</h2><label>Thermal</label><textarea name="thermal"></textarea><label>Thermal Modalities</label><textarea name="thermal_modalities"></textarea></div>
+<div class="card"><h2>8. Sweating</h2><label>Amount</label><textarea name="sweating_amount"></textarea><label>Location</label><textarea name="sweating_location"></textarea><label>Time</label><textarea name="sweating_time"></textarea><label>Odour</label><textarea name="sweating_odour"></textarea><label>Effect</label><textarea name="sweating_effect"></textarea></div>
+<div class="card"><h2>9. Sleep</h2><label>Routine</label><textarea name="sleep_routine"></textarea><label>Onset</label><textarea name="sleep_onset"></textarea><label>Interruption</label><textarea name="sleep_interruption"></textarea><label>Morning</label><textarea name="sleep_morning"></textarea><label>Day Sleepiness</label><textarea name="day_sleepiness"></textarea><label>Position</label><textarea name="sleep_position"></textarea></div>
+<div class="card"><h2>10. Dreams</h2><label>Recall</label><textarea name="dream_recall"></textarea><label>Pattern</label><textarea name="dream_pattern"></textarea><label>Own Words</label><textarea name="dream_own_words"></textarea></div>
+<div class="card"><h2>11. Energy</h2><label>Energy</label><textarea name="energy"></textarea></div>
+<div class="card"><h2>12. Bowels</h2><label>Frequency</label><textarea name="bowels_frequency"></textarea><label>Stool Character</label><textarea name="stool_character"></textarea><label>Constipation</label><textarea name="constipation"></textarea><label>Stool Associated</label><textarea name="stool_associated"></textarea></div>
+<div class="card"><h2>13. Urine</h2><label>Frequency</label><textarea name="urine_frequency"></textarea><label>Quantity</label><textarea name="urine_quantity"></textarea><label>Colour / Smell</label><textarea name="urine_colour_smell"></textarea><label>Symptoms</label><textarea name="urine_symptoms"></textarea></div>
+<div class="card"><h2>14. Mental & Emotional</h2><label>Temperament</label><textarea name="temperament"></textarea><label>Anxiety</label><textarea name="anxiety"></textarea><label>Fear</label><textarea name="fear"></textarea><label>Anger</label><textarea name="anger"></textarea><label>Consolation</label><textarea name="consolation"></textarea><label>Criticism</label><textarea name="criticism"></textarea><label>Stress</label><textarea name="stress"></textarea><label>Sadness / Grief</label><textarea name="sadness_grief"></textarea><label>Jealousy / Suspiciousness</label><textarea name="jealousy_suspiciousness"></textarea><label>Confidence</label><textarea name="confidence"></textarea><label>Concentration / Memory</label><textarea name="concentration_memory"></textarea><label>Social Behaviour</label><textarea name="social_behaviour"></textarea></div>
+<div class="card"><h2>15. Personal History</h2><label>Childhood Illnesses</label><textarea name="childhood_illnesses"></textarea><label>Education</label><textarea name="education"></textarea><label>Occupation History</label><textarea name="occupation_history"></textarea><label>Work Timing</label><textarea name="work_timing"></textarea><label>Diet</label><textarea name="diet"></textarea><label>Exercise</label><textarea name="exercise"></textarea><label>Personal Sleep Routine</label><textarea name="personal_sleep_routine"></textarea><label>Daily Routine</label><textarea name="daily_routine"></textarea><label>Personal Water Intake</label><textarea name="personal_water_intake"></textarea><label>Tea / Coffee</label><textarea name="tea_coffee"></textarea><label>Addictions</label><textarea name="addictions"></textarea><label>Major Life Events</label><textarea name="major_life_events"></textarea></div>
+<div class="card">
+<p class="note">After completing the form, tap Send Completed Form. The completed patient data will open in WhatsApp so it can be sent back to the clinic.</p>
+<button class="send" type="submit">Send Completed Form on WhatsApp</button>
+<button class="clear" type="button" id="clearButton">Clear Form</button>
+</div>
+</form>
+<script>
+const form = document.getElementById("patientForm");
+document.getElementById("clearButton").addEventListener("click", () => form.reset());
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+  if (!form.reportValidity()) return;
+  const patient = {};
+  new FormData(form).forEach((value, key) => patient[key] = String(value));
+  patient.format = "HomeopathyPatientHistoryPatient";
+  patient.version = 1;
+  patient.created_at = Date.now();
+  const data = {
+    format: "HomeopathyPatientHistoryPatient",
+    version: 1,
+    patient: patient
+  };
+  const json = JSON.stringify(data, null, 2);
+  const message = "Homeopathy Patient History - Completed Form\n\n" + json;
+  window.location.href = "https://wa.me/?text=" + encodeURIComponent(message);
+});
+</script>
+</body>
+</html>
