@@ -1,76 +1,646 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Homeopathy Patient History</title>
+
 <style>
-*{box-sizing:border-box}body{margin:0;background:#f6f3fa;color:#222;font-family:Arial,sans-serif}
-.header{background:#6b4bb5;color:white;text-align:center;padding:20px 12px}
-.header h1{margin:0;font-size:26px}.header p{margin:8px 0 0;font-size:18px}
-.container{max-width:720px;margin:auto;padding:14px 12px 35px}
-.card{background:white;border:1px solid #ddd6e7;border-radius:16px;padding:16px;margin:12px 0;box-shadow:0 2px 8px #ddd}
-.card h2{color:#543b8e;margin:0 0 14px;font-size:21px}
-label{display:block;font-weight:700;margin:12px 0 5px}
-input,textarea,select{width:100%;padding:13px;border:1px solid #d6d0dc;border-radius:10px;font-size:16px;background:#fff}
-textarea{min-height:70px;resize:vertical}
-button{width:100%;padding:15px;border:0;border-radius:12px;font-size:17px;font-weight:700;margin-top:10px}
-.send{background:#6b4bb5;color:white}.clear{background:#eeeaf4;color:#333}
-.note{font-size:13px;color:#666;line-height:1.5}
+*{box-sizing:border-box}
+
+body{
+    margin:0;
+    background:#f5f2fb;
+    font-family:Arial,sans-serif;
+    color:#222;
+}
+
+header{
+    background:linear-gradient(135deg,#6b45b9,#7b4fc7);
+    color:white;
+    padding:28px 18px;
+    text-align:center;
+}
+
+h1{
+    font-size:30px;
+    margin:0 0 8px;
+    font-weight:800;
+}
+
+.sub{
+    font-size:18px;
+}
+
+.container{
+    max-width:760px;
+    margin:22px auto;
+    padding:0 14px;
+}
+
+.card{
+    background:white;
+    border:1px solid #ddd;
+    border-radius:20px;
+    padding:20px;
+    margin-bottom:18px;
+    box-shadow:0 3px 12px #00000010;
+}
+
+h2{
+    color:#5b3a9e;
+    font-size:23px;
+    margin:0 0 18px;
+}
+
+label{
+    display:block;
+    font-size:17px;
+    font-weight:700;
+    margin:15px 0 7px;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:14px;
+    border:1px solid #cfcfcf;
+    border-radius:12px;
+    font-size:16px;
+    background:#fff;
+}
+
+textarea{
+    resize:vertical;
+}
+
+.actions{
+    position:sticky;
+    bottom:0;
+    background:#f5f2fb;
+    padding:12px 0;
+    display:flex;
+    gap:10px;
+}
+
+button{
+    flex:1;
+    border:0;
+    border-radius:13px;
+    padding:15px;
+    font-size:16px;
+    font-weight:800;
+}
+
+.send{
+    background:#6b45b9;
+    color:white;
+}
+
+.clear{
+    background:#e8e3f2;
+    color:#4f3a77;
+}
+
+.note{
+    font-size:13px;
+    color:#666;
+    text-align:center;
+    margin:12px 0 25px;
+    line-height:1.5;
+}
+
+@media(max-width:500px){
+    h1{font-size:27px}
+    h2{font-size:21px}
+    .container{padding:0 10px}
+}
 </style>
 </head>
+
 <body>
-<div class="header"><h1>Homeopathy Patient History</h1><p>Patient Information Form</p></div>
-<form id="patientForm" class="container">
-<div class="card"><h2>1. Patient Information</h2>
-<label>Patient Name *</label><input name="patient_name" required>
-<label>Age</label><input name="patient_age" type="number">
-<label>Gender</label><select name="patient_gender"><option value=""></option><option>Male</option><option>Female</option><option>Other</option></select>
-<label>Mobile</label><input name="patient_mobile" type="tel">
-<label>Address</label><textarea name="patient_address"></textarea>
-<label>Occupation</label><input name="patient_occupation">
-<label>Email</label><input name="patient_email" type="email">
+
+<header>
+    <h1>Homeopathy Patient History</h1>
+    <div class="sub">Patient Information Form</div>
+</header>
+
+<div class="container">
+
+<form id="patientForm">
+
+<!-- 1 -->
+<section class="card">
+<h2>1. Patient Information</h2>
+
+<label>Patient Name *</label>
+<input type="text" name="patient_name" required>
+
+<label>Age</label>
+<input type="number" name="patient_age">
+
+<label>Gender</label>
+<select name="patient_gender">
+<option value="">Select</option>
+<option value="Male">Male</option>
+<option value="Female">Female</option>
+<option value="Other">Other</option>
+</select>
+
+<label>Mobile</label>
+<input type="tel" name="patient_mobile">
+
+<label>Address</label>
+<textarea name="patient_address" rows="3"></textarea>
+
+<label>Occupation</label>
+<input type="text" name="patient_occupation">
+
+<label>Email</label>
+<input type="email" name="patient_email">
+</section>
+
+
+<!-- 2 -->
+<section class="card">
+<h2>2. Chief Complaint</h2>
+
+<label>Main Complaint</label>
+<textarea name="complaint" rows="3"></textarea>
+
+<label>Since When</label>
+<input type="text" name="complaint_since">
+
+<label>Location</label>
+<input type="text" name="complaint_location">
+
+<label>Sensation</label>
+<textarea name="complaint_sensation" rows="3"></textarea>
+
+<label>Severity</label>
+<input type="text" name="complaint_severity">
+
+<label>Better / Worse</label>
+<textarea name="complaint_better_worse" rows="3"></textarea>
+
+<label>Time / Frequency</label>
+<textarea name="complaint_time_frequency" rows="3"></textarea>
+</section>
+
+
+<!-- 3 -->
+<section class="card">
+<h2>3. Present Illness</h2>
+
+<label>Onset</label>
+<textarea name="present_onset" rows="3"></textarea>
+
+<label>Possible Trigger / Cause</label>
+<textarea name="present_trigger" rows="3"></textarea>
+
+<label>Progress of Illness</label>
+<textarea name="present_progress" rows="3"></textarea>
+
+<label>Previous Treatment / Medicines</label>
+<textarea name="previous_treatment" rows="3"></textarea>
+</section>
+
+
+<!-- 4 -->
+<section class="card">
+<h2>4. Physical Generals</h2>
+
+<label>Appetite</label>
+<textarea name="appetite" rows="3"></textarea>
+
+<label>General Food Habits</label>
+<textarea name="food_general" rows="3"></textarea>
+
+<label>General Thermal Condition</label>
+<textarea name="thermal_general" rows="3"></textarea>
+
+<label>General Sweating</label>
+<textarea name="sweating_general" rows="3"></textarea>
+
+<label>General Sleep</label>
+<textarea name="sleep_general" rows="3"></textarea>
+
+<label>Energy</label>
+<textarea name="energy" rows="3"></textarea>
+</section>
+
+
+<!-- 5 -->
+<section class="card">
+<h2>5. Thirst</h2>
+
+<label>Thirst</label>
+<textarea name="thirst_basic" rows="3"></textarea>
+
+<label>Quantity of Water</label>
+<input type="text" name="thirst_quantity">
+
+<label>Pattern / Frequency</label>
+<textarea name="thirst_pattern" rows="3"></textarea>
+
+<label>Water Temperature Preferred</label>
+<input type="text" name="thirst_temperature">
+
+<label>Timing</label>
+<textarea name="thirst_timing" rows="3"></textarea>
+
+<label>Night Thirst</label>
+<input type="text" name="night_thirst">
+
+<label>Mouth / Dryness</label>
+<textarea name="thirst_mouth" rows="3"></textarea>
+
+<label>Effect of Drinking Water</label>
+<textarea name="water_effect" rows="3"></textarea>
+
+<label>Total Daily Fluids</label>
+<input type="text" name="total_fluids">
+</section>
+
+
+<!-- 6 -->
+<section class="card">
+<h2>6. Food Preferences & Intolerance</h2>
+
+<label>Food Desires</label>
+<textarea name="food_desires" rows="3"></textarea>
+
+<label>Food Aversions</label>
+<textarea name="food_aversions" rows="3"></textarea>
+
+<label>Food Intolerance / Sensitivity</label>
+<textarea name="food_intolerance" rows="3"></textarea>
+</section>
+
+
+<!-- 7 -->
+<section class="card">
+<h2>7. Thermal & Temperature</h2>
+
+<label>Thermal State</label>
+<textarea name="thermal_general" rows="3"></textarea>
+
+<label>Hot / Cold Preference</label>
+<input type="text" name="thermal">
+
+<label>Thermal Modalities</label>
+<textarea name="thermal_modalities" rows="3"></textarea>
+</section>
+
+
+<!-- 8 -->
+<section class="card">
+<h2>8. Sweating</h2>
+
+<label>General Sweating</label>
+<textarea name="sweating_general" rows="3"></textarea>
+
+<label>Amount</label>
+<input type="text" name="sweating_amount">
+
+<label>Location</label>
+<input type="text" name="sweating_location">
+
+<label>Time</label>
+<input type="text" name="sweating_time">
+
+<label>Odour</label>
+<input type="text" name="sweating_odour">
+
+<label>Effect / After Sweating</label>
+<textarea name="sweating_effect" rows="3"></textarea>
+</section>
+
+
+<!-- 9 -->
+<section class="card">
+<h2>9. Sleep</h2>
+
+<label>General Sleep</label>
+<textarea name="sleep_general" rows="3"></textarea>
+
+<label>Sleep Routine</label>
+<textarea name="sleep_routine" rows="3"></textarea>
+
+<label>Sleep Onset</label>
+<input type="text" name="sleep_onset">
+
+<label>Night Waking / Interruption</label>
+<textarea name="sleep_interruption" rows="3"></textarea>
+
+<label>Morning Condition</label>
+<textarea name="sleep_morning" rows="3"></textarea>
+
+<label>Daytime Sleepiness</label>
+<input type="text" name="day_sleepiness">
+
+<label>Preferred Sleeping Position</label>
+<input type="text" name="sleep_position">
+</section>
+
+
+<!-- 10 -->
+<section class="card">
+<h2>10. Dreams</h2>
+
+<label>Dream Recall</label>
+<input type="text" name="dream_recall">
+
+<label>Dream Pattern / Themes</label>
+<textarea name="dream_pattern" rows="3"></textarea>
+
+<label>Dreams in Patient's Own Words</label>
+<textarea name="dream_own_words" rows="3"></textarea>
+</section>
+
+
+<!-- 11 -->
+<section class="card">
+<h2>11. Bowels</h2>
+
+<label>General Bowel Habit</label>
+<textarea name="bowels_general" rows="3"></textarea>
+
+<label>Frequency</label>
+<input type="text" name="bowels_frequency">
+
+<label>Stool Character</label>
+<textarea name="stool_character" rows="3"></textarea>
+
+<label>Constipation</label>
+<textarea name="constipation" rows="3"></textarea>
+
+<label>Associated Symptoms</label>
+<textarea name="stool_associated" rows="3"></textarea>
+</section>
+
+
+<!-- 12 -->
+<section class="card">
+<h2>12. Urine</h2>
+
+<label>Frequency</label>
+<input type="text" name="urine_frequency">
+
+<label>Quantity</label>
+<input type="text" name="urine_quantity">
+
+<label>Colour / Smell</label>
+<textarea name="urine_colour_smell" rows="3"></textarea>
+
+<label>Urinary Symptoms</label>
+<textarea name="urine_symptoms" rows="3"></textarea>
+</section>
+
+
+<!-- 13 -->
+<section class="card">
+<h2>13. Mental & Emotional</h2>
+
+<label>Temperament / Nature</label>
+<textarea name="temperament" rows="3"></textarea>
+
+<label>Anxiety</label>
+<textarea name="anxiety" rows="3"></textarea>
+
+<label>Fears</label>
+<textarea name="fear" rows="3"></textarea>
+
+<label>Anger / Irritability</label>
+<textarea name="anger" rows="3"></textarea>
+
+<label>Response to Consolation</label>
+<textarea name="consolation" rows="3"></textarea>
+
+<label>Response to Criticism</label>
+<textarea name="criticism" rows="3"></textarea>
+
+<label>Stress</label>
+<textarea name="stress" rows="3"></textarea>
+
+<label>Sadness / Grief</label>
+<textarea name="sadness_grief" rows="3"></textarea>
+
+<label>Jealousy / Suspiciousness</label>
+<textarea name="jealousy_suspiciousness" rows="3"></textarea>
+
+<label>Confidence</label>
+<textarea name="confidence" rows="3"></textarea>
+
+<label>Concentration / Memory</label>
+<textarea name="concentration_memory" rows="3"></textarea>
+
+<label>Social Behaviour</label>
+<textarea name="social_behaviour" rows="3"></textarea>
+</section>
+
+
+<!-- 14 -->
+<section class="card">
+<h2>14. Personal History</h2>
+
+<label>Childhood Illnesses</label>
+<textarea name="childhood_illnesses" rows="3"></textarea>
+
+<label>Education</label>
+<textarea name="education" rows="3"></textarea>
+
+<label>Occupation History</label>
+<textarea name="occupation_history" rows="3"></textarea>
+
+<label>Work Timing</label>
+<input type="text" name="work_timing">
+
+<label>Diet</label>
+<textarea name="diet" rows="3"></textarea>
+
+<label>Exercise</label>
+<textarea name="exercise" rows="3"></textarea>
+
+<label>Personal Sleep Routine</label>
+<textarea name="personal_sleep_routine" rows="3"></textarea>
+
+<label>Daily Routine</label>
+<textarea name="daily_routine" rows="3"></textarea>
+
+<label>Daily Water Intake</label>
+<input type="text" name="personal_water_intake">
+
+<label>Tea / Coffee</label>
+<input type="text" name="tea_coffee">
+
+<label>Addictions</label>
+<textarea name="addictions" rows="3"></textarea>
+
+<label>Major Life Events</label>
+<textarea name="major_life_events" rows="3"></textarea>
+</section>
+
+
+<!-- 15 -->
+<section class="card">
+<h2>15. Follow-up & Additional Information</h2>
+
+<label>History Date</label>
+<input type="date" name="history_date">
+
+<label>Follow-up Date</label>
+<input type="date" name="follow_up_date">
+
+<label>Additional Notes</label>
+<textarea name="additional_notes" rows="4"></textarea>
+</section>
+
+
+<div class="actions">
+<button type="button" class="clear"
+onclick="document.getElementById('patientForm').reset()">
+Clear Form
+</button>
+
+<button type="button" class="send" onclick="sendData()">
+Send Patient Data
+</button>
 </div>
-<div class="card"><h2>2. Chief Complaint</h2><label>Complaint</label><textarea name="complaint"></textarea><label>Since</label><textarea name="complaint_since"></textarea><label>Location</label><textarea name="complaint_location"></textarea><label>Sensation</label><textarea name="complaint_sensation"></textarea><label>Severity</label><textarea name="complaint_severity"></textarea><label>Better / Worse</label><textarea name="complaint_better_worse"></textarea><label>Time / Frequency</label><textarea name="complaint_time_frequency"></textarea></div>
-<div class="card"><h2>3. Present Illness</h2><label>Onset</label><textarea name="present_onset"></textarea><label>Trigger</label><textarea name="present_trigger"></textarea><label>Progress</label><textarea name="present_progress"></textarea><label>Previous Treatment</label><textarea name="previous_treatment"></textarea></div>
-<div class="card"><h2>4. Physical Generals</h2><label>Appetite</label><textarea name="appetite"></textarea><label>Food General</label><textarea name="food_general"></textarea><label>Thermal General</label><textarea name="thermal_general"></textarea><label>Sweating General</label><textarea name="sweating_general"></textarea><label>Sleep General</label><textarea name="sleep_general"></textarea><label>Dreams General</label><textarea name="dreams_general"></textarea><label>Energy General</label><textarea name="energy_general"></textarea><label>Bowels General</label><textarea name="bowels_general"></textarea><label>Urine General</label><textarea name="urine_general"></textarea></div>
-<div class="card"><h2>5. Tarash</h2><label>Basic</label><textarea name="thirst_basic"></textarea><label>Quantity</label><textarea name="thirst_quantity"></textarea><label>Pattern</label><textarea name="thirst_pattern"></textarea><label>Temperature</label><textarea name="thirst_temperature"></textarea><label>Timing</label><textarea name="thirst_timing"></textarea><label>Night Tarash</label><textarea name="night_thirst"></textarea><label>Mouth</label><textarea name="thirst_mouth"></textarea><label>Effect of Water</label><textarea name="water_effect"></textarea><label>Total Fluids</label><textarea name="total_fluids"></textarea></div>
-<div class="card"><h2>6. Food</h2><label>Food Desires</label><textarea name="food_desires"></textarea><label>Food Aversions</label><textarea name="food_aversions"></textarea><label>Food Intolerance</label><textarea name="food_intolerance"></textarea></div>
-<div class="card"><h2>7. Thermal</h2><label>Thermal</label><textarea name="thermal"></textarea><label>Thermal Modalities</label><textarea name="thermal_modalities"></textarea></div>
-<div class="card"><h2>8. Sweating</h2><label>Amount</label><textarea name="sweating_amount"></textarea><label>Location</label><textarea name="sweating_location"></textarea><label>Time</label><textarea name="sweating_time"></textarea><label>Odour</label><textarea name="sweating_odour"></textarea><label>Effect</label><textarea name="sweating_effect"></textarea></div>
-<div class="card"><h2>9. Sleep</h2><label>Routine</label><textarea name="sleep_routine"></textarea><label>Onset</label><textarea name="sleep_onset"></textarea><label>Interruption</label><textarea name="sleep_interruption"></textarea><label>Morning</label><textarea name="sleep_morning"></textarea><label>Day Sleepiness</label><textarea name="day_sleepiness"></textarea><label>Position</label><textarea name="sleep_position"></textarea></div>
-<div class="card"><h2>10. Dreams</h2><label>Recall</label><textarea name="dream_recall"></textarea><label>Pattern</label><textarea name="dream_pattern"></textarea><label>Own Words</label><textarea name="dream_own_words"></textarea></div>
-<div class="card"><h2>11. Energy</h2><label>Energy</label><textarea name="energy"></textarea></div>
-<div class="card"><h2>12. Bowels</h2><label>Frequency</label><textarea name="bowels_frequency"></textarea><label>Stool Character</label><textarea name="stool_character"></textarea><label>Constipation</label><textarea name="constipation"></textarea><label>Stool Associated</label><textarea name="stool_associated"></textarea></div>
-<div class="card"><h2>13. Urine</h2><label>Frequency</label><textarea name="urine_frequency"></textarea><label>Quantity</label><textarea name="urine_quantity"></textarea><label>Colour / Smell</label><textarea name="urine_colour_smell"></textarea><label>Symptoms</label><textarea name="urine_symptoms"></textarea></div>
-<div class="card"><h2>14. Mental & Emotional</h2><label>Temperament</label><textarea name="temperament"></textarea><label>Anxiety</label><textarea name="anxiety"></textarea><label>Fear</label><textarea name="fear"></textarea><label>Anger</label><textarea name="anger"></textarea><label>Consolation</label><textarea name="consolation"></textarea><label>Criticism</label><textarea name="criticism"></textarea><label>Stress</label><textarea name="stress"></textarea><label>Sadness / Grief</label><textarea name="sadness_grief"></textarea><label>Jealousy / Suspiciousness</label><textarea name="jealousy_suspiciousness"></textarea><label>Confidence</label><textarea name="confidence"></textarea><label>Concentration / Memory</label><textarea name="concentration_memory"></textarea><label>Social Behaviour</label><textarea name="social_behaviour"></textarea></div>
-<div class="card"><h2>15. Personal History</h2><label>Childhood Illnesses</label><textarea name="childhood_illnesses"></textarea><label>Education</label><textarea name="education"></textarea><label>Occupation History</label><textarea name="occupation_history"></textarea><label>Work Timing</label><textarea name="work_timing"></textarea><label>Diet</label><textarea name="diet"></textarea><label>Exercise</label><textarea name="exercise"></textarea><label>Personal Sleep Routine</label><textarea name="personal_sleep_routine"></textarea><label>Daily Routine</label><textarea name="daily_routine"></textarea><label>Personal Water Intake</label><textarea name="personal_water_intake"></textarea><label>Tea / Coffee</label><textarea name="tea_coffee"></textarea><label>Addictions</label><textarea name="addictions"></textarea><label>Major Life Events</label><textarea name="major_life_events"></textarea></div>
-<div class="card">
-<p class="note">After completing the form, tap Send Completed Form. The completed patient data will open in WhatsApp so it can be sent back to the clinic.</p>
-<button class="send" type="submit">Send Completed Form on WhatsApp</button>
-<button class="clear" type="button" id="clearButton">Clear Form</button>
-</div>
+
 </form>
+
+<div class="note">
+This form prepares the patient's data on the patient's device.
+Patient information is not uploaded to GitHub.
+</div>
+
+</div>
+
+
 <script>
-const form = document.getElementById("patientForm");
-document.getElementById("clearButton").addEventListener("click", () => form.reset());
-form.addEventListener("submit", function(event) {
-  event.preventDefault();
-  if (!form.reportValidity()) return;
-  const patient = {};
-  new FormData(form).forEach((value, key) => patient[key] = String(value));
-  patient.format = "HomeopathyPatientHistoryPatient";
-  patient.version = 1;
-  patient.created_at = Date.now();
-  const data = {
-    format: "HomeopathyPatientHistoryPatient",
-    version: 1,
-    patient: patient
-  };
-  const json = JSON.stringify(data, null, 2);
-  const message = "Homeopathy Patient History - Completed Form\n\n" + json;
-  window.location.href = "https://wa.me/?text=" + encodeURIComponent(message);
-});
+
+async function sendData(){
+
+    const form = document.getElementById("patientForm");
+
+    const name =
+        form.elements["patient_name"].value.trim();
+
+    if(!name){
+
+        alert("Please enter the patient name.");
+
+        return;
+    }
+
+
+    const patient = {};
+
+    for(const el of form.elements){
+
+        if(el.name){
+
+            patient[el.name] = el.value;
+
+        }
+
+    }
+
+
+    const data = {
+
+        format:"HomeopathyPatientHistoryPatient",
+
+        version:1,
+
+        patient:patient,
+
+        created_at:Date.now()
+
+    };
+
+
+    const json =
+        JSON.stringify(data,null,2);
+
+
+    const safeName =
+        name
+        .replace(/[^a-zA-Z0-9_-]+/g,"_")
+        .slice(0,40)
+        || "Patient";
+
+
+    const file =
+        new File(
+            [json],
+            "HomeopathyPatient_" + safeName + ".json",
+            {type:"application/json"}
+        );
+
+
+    try{
+
+        if(
+            navigator.share &&
+            navigator.canShare &&
+            navigator.canShare({files:[file]})
+        ){
+
+            await navigator.share({
+
+                title:"Homeopathy Patient Data",
+
+                text:"Patient data is ready. Choose WhatsApp.",
+
+                files:[file]
+
+            });
+
+            return;
+
+        }
+
+    }catch(e){
+
+        if(e && e.name==="AbortError"){
+
+            return;
+
+        }
+
+    }
+
+
+    const url =
+        URL.createObjectURL(file);
+
+
+    const a =
+        document.createElement("a");
+
+    a.href = url;
+
+    a.download = file.name;
+
+    document.body.appendChild(a);
+
+    a.click();
+
+    a.remove();
+
+    URL.revokeObjectURL(url);
+
+
+    alert(
+        "The patient data JSON file has been downloaded. Please send this file on WhatsApp."
+    );
+
+}
+
 </script>
+
 </body>
 </html>
