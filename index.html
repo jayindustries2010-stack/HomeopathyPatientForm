@@ -7,7 +7,9 @@
 <title>Homeopathy Patient History</title>
 
 <style>
-*{box-sizing:border-box}
+*{
+box-sizing:border-box;
+}
 
 body{
 margin:0;
@@ -61,7 +63,9 @@ font-weight:700;
 margin:15px 0 7px;
 }
 
-input,select,textarea{
+input,
+select,
+textarea{
 width:100%;
 padding:14px;
 border:1px solid #cfcfcf;
@@ -111,9 +115,19 @@ line-height:1.5;
 }
 
 @media(max-width:500px){
-h1{font-size:27px}
-h2{font-size:21px}
-.container{padding:0 10px}
+
+h1{
+font-size:27px;
+}
+
+h2{
+font-size:21px;
+}
+
+.container{
+padding:0 10px;
+}
+
 }
 </style>
 </head>
@@ -121,15 +135,25 @@ h2{font-size:21px}
 <body>
 
 <header>
+
 <h1>Homeopathy Patient History</h1>
-<div class="sub">Patient Information Form</div>
+
+<div class="sub">
+Patient Information Form
+</div>
+
 </header>
+
 
 <div class="container">
 
 <form id="patientForm">
 
+
+<!-- 1 -->
+
 <section class="card">
+
 <h2>1. Patient Information</h2>
 
 <label>Patient Name *</label>
@@ -139,11 +163,14 @@ h2{font-size:21px}
 <input type="number" name="patient_age">
 
 <label>Gender</label>
+
 <select name="patient_gender">
+
 <option value="">Select</option>
 <option value="Male">Male</option>
 <option value="Female">Female</option>
 <option value="Other">Other</option>
+
 </select>
 
 <label>Mobile</label>
@@ -157,10 +184,14 @@ h2{font-size:21px}
 
 <label>Email</label>
 <input type="email" name="patient_email">
+
 </section>
 
 
+<!-- 2 -->
+
 <section class="card">
+
 <h2>2. Chief Complaint</h2>
 
 <label>Main Complaint</label>
@@ -183,10 +214,14 @@ h2{font-size:21px}
 
 <label>Time / Frequency</label>
 <textarea name="complaint_time_frequency" rows="3"></textarea>
+
 </section>
 
 
+<!-- 3 -->
+
 <section class="card">
+
 <h2>3. Present Illness</h2>
 
 <label>Onset</label>
@@ -200,10 +235,14 @@ h2{font-size:21px}
 
 <label>Previous Treatment / Medicines</label>
 <textarea name="previous_treatment" rows="3"></textarea>
+
 </section>
 
 
+<!-- 4 -->
+
 <section class="card">
+
 <h2>4. Physical Generals</h2>
 
 <label>Appetite</label>
@@ -212,12 +251,19 @@ h2{font-size:21px}
 <label>General Food Habits</label>
 <textarea name="food_general" rows="3"></textarea>
 
+<label>General Physical Condition</label>
+<textarea name="physical_general" rows="3"></textarea>
+
 <label>Energy</label>
-<textarea name="energy" rows="3"></textarea>
+<textarea name="energy_general" rows="3"></textarea>
+
 </section>
 
 
+<!-- 5 -->
+
 <section class="card">
+
 <h2>5. Thirst</h2>
 
 <label>Thirst</label>
@@ -246,10 +292,14 @@ h2{font-size:21px}
 
 <label>Total Daily Fluids</label>
 <input type="text" name="total_fluids">
+
 </section>
 
 
+<!-- 6 -->
+
 <section class="card">
+
 <h2>6. Food Preferences & Intolerance</h2>
 
 <label>Food Desires</label>
@@ -260,10 +310,14 @@ h2{font-size:21px}
 
 <label>Food Intolerance / Sensitivity</label>
 <textarea name="food_intolerance" rows="3"></textarea>
+
 </section>
 
 
+<!-- 7 -->
+
 <section class="card">
+
 <h2>7. Thermal & Temperature</h2>
 
 <label>Thermal State</label>
@@ -272,12 +326,16 @@ h2{font-size:21px}
 <label>Hot / Cold Preference</label>
 <input type="text" name="thermal">
 
-<label>Thermal Modalities / What Makes Better or Worse</label>
+<label>Thermal Modalities / Better or Worse</label>
 <textarea name="thermal_modalities" rows="3"></textarea>
+
 </section>
 
 
+<!-- 8 -->
+
 <section class="card">
+
 <h2>8. Sweating</h2>
 
 <label>General Sweating</label>
@@ -297,10 +355,14 @@ h2{font-size:21px}
 
 <label>Effect / After Sweating</label>
 <textarea name="sweating_effect" rows="3"></textarea>
+
 </section>
 
 
+<!-- 9 -->
+
 <section class="card">
+
 <h2>9. Sleep</h2>
 
 <label>General Sleep</label>
@@ -324,12 +386,13 @@ h2{font-size:21px}
 <label>Preferred Sleeping Position</label>
 <input type="text" name="sleep_position">
 
-<label>Personal Sleep Routine</label>
-<textarea name="personal_sleep_routine" rows="3"></textarea>
 </section>
 
 
+<!-- 10 -->
+
 <section class="card">
+
 <h2>10. Dreams</h2>
 
 <label>Dream Recall</label>
@@ -340,10 +403,14 @@ h2{font-size:21px}
 
 <label>Dreams in Patient's Own Words</label>
 <textarea name="dream_own_words" rows="3"></textarea>
+
 </section>
 
 
+<!-- 11 -->
+
 <section class="card">
+
 <h2>11. Bowels</h2>
 
 <label>General Bowel Habit</label>
@@ -360,10 +427,14 @@ h2{font-size:21px}
 
 <label>Associated Symptoms</label>
 <textarea name="stool_associated" rows="3"></textarea>
+
 </section>
 
 
+<!-- 12 -->
+
 <section class="card">
+
 <h2>12. Urine</h2>
 
 <label>Frequency</label>
@@ -377,10 +448,14 @@ h2{font-size:21px}
 
 <label>Urinary Symptoms</label>
 <textarea name="urine_symptoms" rows="3"></textarea>
+
 </section>
 
 
+<!-- 13 -->
+
 <section class="card">
+
 <h2>13. Mental & Emotional</h2>
 
 <label>Temperament / Nature</label>
@@ -418,10 +493,14 @@ h2{font-size:21px}
 
 <label>Social Behaviour</label>
 <textarea name="social_behaviour" rows="3"></textarea>
+
 </section>
 
 
+<!-- 14 -->
+
 <section class="card">
+
 <h2>14. Personal History</h2>
 
 <label>Childhood Illnesses</label>
@@ -456,10 +535,14 @@ h2{font-size:21px}
 
 <label>Major Life Events</label>
 <textarea name="major_life_events" rows="3"></textarea>
+
 </section>
 
 
+<!-- 15 -->
+
 <section class="card">
+
 <h2>15. Follow-up & Additional Information</h2>
 
 <label>History Date</label>
@@ -470,25 +553,38 @@ h2{font-size:21px}
 
 <label>Additional Notes</label>
 <textarea name="additional_notes" rows="3"></textarea>
+
 </section>
 
 
+<!-- BUTTONS -->
+
 <div class="actions">
-<button type="button" class="clear"
+
+<button
+type="button"
+class="clear"
 onclick="document.getElementById('patientForm').reset()">
 Clear Form
 </button>
 
-<button type="button" class="send" onclick="sendData()">
+<button
+type="button"
+class="send"
+onclick="sendToWhatsApp()">
 Send Patient Data
 </button>
+
 </div>
 
 </form>
 
+
 <div class="note">
-This form prepares the patient's data on the patient's device.
-Patient information is not uploaded to GitHub.
+
+Patient information is prepared on this device.
+It is not uploaded to GitHub.
+
 </div>
 
 </div>
@@ -496,163 +592,80 @@ Patient information is not uploaded to GitHub.
 
 <script>
 
-async function sendData(){
+function sendToWhatsApp(){
 
 const form=document.getElementById("patientForm");
 
 const name=form.elements["patient_name"].value.trim();
 
 if(!name){
+
 alert("Please enter the patient name.");
+
 return;
+
 }
 
 
-/* Collect patient data */
+/* Collect all patient information */
 
 const patient={};
 
-for(const el of form.elements){
+for(const element of form.elements){
 
-if(el.name){
-patient[el.name]=el.value;
+if(element.name){
+
+patient[element.name]=element.value;
+
 }
 
 }
 
 
-/* Create JSON */
+/* Create patient data */
 
 const data={
+
 format:"HomeopathyPatientHistoryPatient",
+
 version:1,
+
 patient:patient,
+
 created_at:Date.now()
+
 };
 
-const json=JSON.stringify(data,null,2);
+
+/* Compact JSON */
+
+const json=JSON.stringify(data);
 
 
-/* File name */
+/* WhatsApp message */
 
-const safeName=
-name.replace(/[^a-zA-Z0-9_-]+/g,"_")
-.slice(0,40) || "Patient";
-
-const fileName=
-"HomeopathyPatient_"+safeName+".json";
-
-
-/* Create share file */
-/* text/plain gives better Android Web Share compatibility */
-
-const file=new File(
-[json],
-fileName,
-{type:"text/plain"}
-);
+const message=
+"HOMEOPATHY PATIENT HISTORY\n\n"+
+"Patient Name: "+name+
+"\n\nPATIENT DATA\n"+
+json+
+"\n\nEnd of Patient Data";
 
 
-/* STEP 1 - Try Android file sharing */
+/* Encode message */
 
-try{
-
-if(
-navigator.share &&
-navigator.canShare &&
-navigator.canShare({files:[file]})
-){
-
-await navigator.share({
-
-title:"Homeopathy Patient Data",
-
-text:"Completed Homeopathy Patient History",
-
-files:[file]
-
-});
-
-return;
-
-}
-
-}catch(error){
-
-if(error && error.name==="AbortError"){
-return;
-}
-
-}
+const encodedMessage=encodeURIComponent(message);
 
 
-/* STEP 2 - Try normal Android Share */
+/* WhatsApp URL */
 
-try{
-
-if(navigator.share){
-
-await navigator.share({
-
-title:"Homeopathy Patient Data",
-
-text:
-"Homeopathy Patient History\n\n"+
-"Patient: "+name+
-"\n\nPatient JSON Data:\n\n"+
-json
-
-});
-
-return;
-
-}
-
-}catch(error){
-
-if(error && error.name==="AbortError"){
-return;
-}
-
-}
+const whatsappURL=
+"https://wa.me/?text="+encodedMessage;
 
 
-/* STEP 3 - Download JSON file */
+/* Open WhatsApp */
 
-try{
-
-const blob=new Blob(
-[json],
-{type:"application/json"}
-);
-
-const url=URL.createObjectURL(blob);
-
-const a=document.createElement("a");
-
-a.href=url;
-a.download=fileName;
-
-document.body.appendChild(a);
-
-a.click();
-
-a.remove();
-
-URL.revokeObjectURL(url);
-
-alert(
-"The patient JSON file has been downloaded.\n\n"+
-"Open Downloads and share the file on WhatsApp."
-);
-
-}catch(error){
-
-alert(
-"Unable to share or download the patient data."
-);
-
-}
+window.location.href=whatsappURL;
 
 }
 
